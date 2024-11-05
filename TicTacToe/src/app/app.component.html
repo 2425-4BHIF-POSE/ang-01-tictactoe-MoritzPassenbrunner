@@ -1,0 +1,40 @@
+<div class="center">
+  <div class="grid">
+    @for (row of boardState(); track rowIndex; let rowIndex = $index) {
+      @for (val of row; track colIndex; let colIndex = $index) {
+        <app-field [value]="val" (click)="updateBoard(rowIndex,colIndex)"></app-field>
+      }
+    }
+  </div>
+
+  <div class="result">
+    <p>
+      Player Turn: @switch (currentPlayer()) {
+      @case (-1) {
+        X
+      }
+      @case (1) {
+        O
+      }
+    }
+
+
+    </p>
+
+    @if (gameStatus() != 0) {
+
+      @switch (gameStatus()) {
+        @case (-1) {
+          X Wins
+        }
+        @case (1) {
+          O Wins
+        }
+        @case (404) {
+          Draw
+        }
+      }
+      <button  mat-button (click)="resetBoard()">Reset</button>
+    }
+  </div>
+</div>

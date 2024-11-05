@@ -1,0 +1,19 @@
+button {
+  border-radius: 2rem;
+  color: cornflowerblue;
+  border: 5px solid cornflowerblue;
+  background-color: #101414;
+  font-size: 6rem;
+  padding: 1rem;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #212525;
+  border-width: 7px;
+}
